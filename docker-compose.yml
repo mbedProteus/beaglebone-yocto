@@ -1,0 +1,21 @@
+version: "2.1"
+services:
+    bb-yocto-build:
+        build:
+            context: ./docker
+            dockerfile: Dockerfile
+            args:
+                homedir: $HOME_DIR
+                user: $USER
+                uid: $UID
+                group: $GROUP
+                gid: $GID
+        container_name: nxp-yocto-build
+        volumes:
+            - "$SRC_DIR:/src"
+            - "/home:/home"
+            - "$HOME_DIR:/home/$USER"
+            - "$DOWNLOAD_DIR:/src/downloads"  
+        env_file: ./.env
+        entrypoint: /src/docker-entrypoint.sh
+        user: $UID:$GID
