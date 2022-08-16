@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <default sync-j="2"/>
+    <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+    <remote fetch="https://git.openembedded.org" name="oe"/>
+
+    <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe" revision="f22bf6efaae61a8fd9272be64e7d75223c58922e" upstream="dunfell"/>
+    <project name="meta-openembedded" path="sources/poky" remote="yocto" revision="b9ae8da74e259378afb7100402633f5300090397" upstream="dunfell"/>
+</manifest>
